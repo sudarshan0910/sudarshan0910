@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gmail Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      text-align: center;
+    }
+
+    .login-container h2 {
+      margin-bottom: 1rem;
+      color: #202124;
+    }
+
+    .login-container input {
+      width: 100%;
+      padding: 0.7rem;
+      margin: 0.5rem 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 0.7rem;
+      background-color: #1a73e8;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+
+    .login-container button:hover {
+      background-color: #1669c1;
+    }
+
+    .result {
+      margin-top: 1rem;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>Gmail Login</h2>
+    <form id="loginForm">
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    const form = document.getElementById('loginForm');
+    const resultDiv = document.getElementById('result');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const email = document.getElementById('email').value;
+      resultDiv.textContent = `Login attempted for: ${email}`;
+    });
+  </script>
+
+</body>
+</html>
